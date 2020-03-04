@@ -10,17 +10,18 @@ class tcpclient_multi_2{
 		DataOutputStream outtoserver;
 		BufferedReader br;
 		Scanner s;
-		
+	
+
 		br= new BufferedReader(new InputStreamReader(clientsocket.getInputStream()));
 		replysentence=br.readLine();
 		System.out.println("from server: " + replysentence);
-
-s = new Scanner(System.in);
+	
+		s = new Scanner(System.in);
 		System.out.println("Enter a message: ");
 		clientsentence=s.nextLine();
 		outtoserver=new DataOutputStream(clientsocket.getOutputStream());
 		outtoserver.writeBytes(clientsentence + '\n');
-
+	
 	}
 }
 
